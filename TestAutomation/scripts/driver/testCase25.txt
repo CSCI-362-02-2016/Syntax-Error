@@ -1,0 +1,6 @@
+1.25
+2.
+3.	
+4.static_get_rune
+5.5370
+6.Greater Seal of Scaling Energy Regeneration

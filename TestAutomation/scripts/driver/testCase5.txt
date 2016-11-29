@@ -1,0 +1,6 @@
+1.5
+2.
+3.	
+4.static_get_champion
+5.32 
+6.Amumu
