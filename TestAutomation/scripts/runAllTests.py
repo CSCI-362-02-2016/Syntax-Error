@@ -2,14 +2,13 @@ import os
 import webbrowser
 from riotwatcher import RiotWatcher
 from createReport import reportCreate
-#from riotwatcher import RiotWatcher
 
 region = 'NA1'
 rWatcher = RiotWatcher('RGAPI-3088c62d-7884-4d77-9b32-5e614df09701')
 
 testCases = []
 currentDir = os.getcwd() #scripts folder
-testCaseTextDir = os.getcwd() + '\\testCases'
+testCaseTextDir = currentDir.replace('/scripts', '/testCases')
 testCaseExecDir = os.getcwd()
 testID = None
 testReq = None
