@@ -8,7 +8,7 @@ rWatcher = RiotWatcher('RGAPI-3088c62d-7884-4d77-9b32-5e614df09701')
 
 testCases = []
 currentDir = os.getcwd() #scripts folder
-testCaseTextDir = currentDir.replace('/scripts', '/testCases')
+testCaseTextDir = currentDir + '/testCases'
 testCaseExecDir = os.getcwd()
 testID = None
 testReq = None
@@ -34,7 +34,7 @@ for subdir, dirs, files in os.walk(testCaseTextDir):
     for file in files:
         #if file.endswith('.txt'):
         if '.txt' in file and 'SOURCES' not in file:
-            openedfile = open(file, 'r')
+            openedfile = open(testCaseTextDir + '/' + file, 'r')
             for line in openedfile.readlines():
                 if "1." in line:
                     temp = line.split("1.")
@@ -63,7 +63,6 @@ for subdir, dirs, files in os.walk(testCaseTextDir):
 
 for i in range(1,27,1):
     if testCases[i].testMethod.strip() == 'static_get_champion':
-        print("Testing get champion!!")
         #Aatrox ID = 266
         #Anivia ID = 34
         #Alistar = 12
