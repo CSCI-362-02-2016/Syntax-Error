@@ -1,6 +1,0 @@
-1.13
-2.
-3.	
-4.static_get_summoner_spell
-5.1 
-6.Cleanse

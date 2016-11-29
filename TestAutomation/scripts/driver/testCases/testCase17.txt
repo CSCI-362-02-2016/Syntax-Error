@@ -1,6 +1,0 @@
-1.17
-2.
-3.	
-4.static_get_summoner_spell
-5.7 
-6.Heal

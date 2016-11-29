@@ -1,6 +1,0 @@
-1.24
-2.
-3.	
-4.static_get_rune
-5.5233
-6.Quintessence of Cooldown Reduction

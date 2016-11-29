@@ -1,6 +1,0 @@
-1.8
-2.
-3.	
-4.static_get_item
-5.3001 
-6.Abyssal Scepter 

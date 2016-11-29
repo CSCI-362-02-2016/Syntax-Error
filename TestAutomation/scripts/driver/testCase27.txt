@@ -1,6 +1,0 @@
-1.27
-2.
-3.	
-4.static_get_rune
-5.5374
-6.Greater Quintessence of Energy

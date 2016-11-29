@@ -1,6 +1,0 @@
-1.26
-2.
-3.	
-4.static_get_rune
-5.5230
-6.Quintessence of Scaling Health Regeneration
