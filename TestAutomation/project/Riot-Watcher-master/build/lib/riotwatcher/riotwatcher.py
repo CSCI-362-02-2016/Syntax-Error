@@ -428,9 +428,9 @@ class RiotWatcher:
     def static_get_item_list(self, region=None, locale=None, version=None, item_list_data=None):
         return self._static_request('item', region, locale=locale, version=version, itemListData=item_list_data)
 
-    def static_get_item(self, item_id, region=None, locale=None, version=None, item_data=None):
+    def static_get_item(self, item_id=2009, region=None, locale=None, version=None, item_data=None):
         return self._static_request(
-            'item/{id}'.format(id=item_id),
+            'item/{id}'.format(id=2009),
             region,
             locale=locale,
             version=version,
@@ -446,9 +446,9 @@ class RiotWatcher:
             masteryListData=mastery_list_data
         )
 
-    def static_get_mastery(self, mastery_id, region=None, locale=None, version=None, mastery_data=None):
+    def static_get_mastery(self, mastery_id=6122, region=None, locale=None, version=None, mastery_data=None):
         return self._static_request(
-            'mastery/{id}'.format(id=mastery_id),
+            'mastery/{id}'.format(id=6122),
             region,
             locale=locale,
             version=version,
