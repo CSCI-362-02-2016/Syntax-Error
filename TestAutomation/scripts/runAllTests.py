@@ -1,15 +1,25 @@
+## runAllTests.py
+## This is a test driver for the Riot Python Wrapper
+## Created by: Daniel Feliciano, Carson Smith, Brenard Casey
+
+
 import os
 import webbrowser
 from riotwatcher import RiotWatcher
 from createReport import reportCreate
 
+#This data is used to log in to the Riot Games API. It is independent of the Python wrapper or this test driver,
+#it's just a requirement from Riot as a unique identifier for users 
+#of their API.
 region = 'NA1'
 rWatcher = RiotWatcher('RGAPI-3088c62d-7884-4d77-9b32-5e614df09701')
 
 testCases = []
 currentDir = os.getcwd() #scripts folder
 testCaseTextDir = currentDir + '/testCases'
-testCaseExecDir = os.getcwd()
+
+#These objects are used to create a "Test Case", which is then pushed into an Array and cycled through when it
+#is time to run the tests. These attributes follow our test case template as laid out in our report.
 testID = None
 testReq = None
 testComp = None
@@ -17,10 +27,10 @@ testMethod = None
 testInput = None
 testOutcome = None
 testResult = None
-counter = 0
 
 class TestCase:
 
+    #A blank test case, this will be filled by reading the test case files and adding the information to this object. 
     def __init__(self, testID, testReq, testComp, testMethod, testInput, testOutcome, testResult):
         self.testID = testID
         self.testReq = testReq
@@ -32,7 +42,6 @@ class TestCase:
 
 for subdir, dirs, files in os.walk(testCaseTextDir):
     for file in files:
-        #if file.endswith('.txt'):
         if '.txt' in file and 'SOURCES' not in file:
             openedfile = open(testCaseTextDir + '/' + file, 'r')
             for line in openedfile.readlines():
@@ -54,7 +63,6 @@ for subdir, dirs, files in os.walk(testCaseTextDir):
                 if "6." in line:
                     temp = line.split("6.")
                     testOutcome = temp[1].strip()
-                    #fix this later: bug on line/test case class formatting
                     currentTest = TestCase(testID, testReq, testComp, testMethod, testInput, testOutcome, False)
                     testCases.append(currentTest)
         else:
@@ -63,14 +71,15 @@ for subdir, dirs, files in os.walk(testCaseTextDir):
 
 for i in range(1,27,1):
     if testCases[i].testMethod.strip() == 'static_get_champion':
+
+        #####################Sample Information of Champions to compare to. These are the integers that will be returned by ##################################
+        #####################static_get_champion and compared to the information supplied in the test cases for that method.##################################
         #Aatrox ID = 266
         #Anivia ID = 34
         #Alistar = 12
         #Amumu = 32
         #Blitzcrank = 53
         #Galio = 3
-        #print(rWatcher.can_make_request())
-        #print(rWatcher.static_get_champion(266))
         results = rWatcher.static_get_champion(testCases[i].testInput)
         print("The expected oracle is : " + testCases[i].testOutcome)
         print("The actual oracle is : " + results['name'])

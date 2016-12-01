@@ -1,3 +1,9 @@
+##createReport.py
+##This is used to create the report output of the results of our test cases for the Riot API Python Wrapper.
+##after the test cases are executed, this report will be generated and opened into a browser window to display
+##the results.
+##Created By: Carson Smith, Brenard Casey, Daniel Feliciano 
+
 import os
 
 def reportCreate(testCases):
